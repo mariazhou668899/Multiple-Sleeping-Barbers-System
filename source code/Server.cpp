@@ -151,12 +151,10 @@ int main(int argc, char const *argv[])
 
   // Bind this socket to its local address by calling bind as passing the following arguement: 
   // the socket descriptor, the sockaddr_in structure defined above, and its data size  
-  int isBind=bind(serverSD, (sockaddr*)&acceptSockAddr, sizeof(acceptSockAddr));
-  if(isBind==-1){
-    printf("bind failed\n");  
-    return -1;    
-  }
+  
+//////////////////////////////////////////delete
 
+  
   // Instruct the operating system to listen up to n connection requests from clients at a time by calling listen
   int isListen=listen(serverSD, n_connection_rq);
   if(isListen==-1){
@@ -165,9 +163,8 @@ int main(int argc, char const *argv[])
   }
 
   // Recieve a request from a client by calling accept that will return a new socket specific to this connection request
-  sockaddr_in newSockAddr;
-  socklen_t newSockAddrSize = sizeof(newSockAddr);
-  int newSd = accept(serverSD, (sockaddr*)&newSockAddr, &newSockAddrSize);
+  
+////////////////////////////////////////delete
   
   printf("Server: accepted connection\n");
   fflush(stdout);
